@@ -2,8 +2,8 @@
 
 > **The Ultimate Collection of Free Developer Tools** — A production-quality, offline-capable progressive web app with 28 tools built entirely in Vanilla JS, hosted on GitHub Pages.
 
-[![GitHub Pages](https://img.shields.io/badge/Live-GitHub%20Pages-blueviolet?logo=github)](https://your-username.github.io/developer-toolkit)
-[![PWA](https://img.shields.io/badge/PWA-Installable-success?logo=pwa)](https://your-username.github.io/developer-toolkit)
+[![GitHub Pages](https://img.shields.io/badge/Live-GitHub%20Pages-blueviolet?logo=github)](https://vimantha-dilshan.github.io/developer-toolkit/)
+[![PWA](https://img.shields.io/badge/PWA-Installable-success?logo=pwa)](https://vimantha-dilshan.github.io/developer-toolkit/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
@@ -12,41 +12,41 @@
 
 ### 🛠️ 13 Core Developer Tools
 
-| Tool | Description |
-| ------ | ------------- |
-| **JSON Formatter** | Format, minify, validate, and tree-view JSON with search |
-| **JWT Decoder** | Decode JWT tokens — header, payload, claims, expiry countdown |
-| **UUID Generator** | Generate UUID v1/v4/v7, ULID, NanoID — bulk mode |
-| **SQL Formatter** | Format SQL with MySQL/PostgreSQL/SQLite/T-SQL/Oracle dialects |
-| **Regex Tester** | Live match highlighting, replace mode, flags, cheatsheet |
-| **API Tester** | Mini Postman — GET/POST/PUT/DELETE, auth, headers, cURL export |
-| **Docker Generator** | Generate docker-compose.yml + Dockerfile + .env.example |
-| **ENV Comparator** | Compare two .env files — missing, extra, and changed keys |
-| **Markdown Preview** | GitHub-style Markdown editor + split preview |
-| **cURL Converter** | Convert cURL to JS/Python/axios/got/HTTPie |
+| Tool                    | Description                                                    |
+| ----------------------- | -------------------------------------------------------------- |
+| **JSON Formatter**      | Format, minify, validate, and tree-view JSON with search       |
+| **JWT Decoder**         | Decode JWT tokens — header, payload, claims, expiry countdown  |
+| **UUID Generator**      | Generate UUID v1/v4/v7, ULID, NanoID — bulk mode               |
+| **SQL Formatter**       | Format SQL with MySQL/PostgreSQL/SQLite/T-SQL/Oracle dialects  |
+| **Regex Tester**        | Live match highlighting, replace mode, flags, cheatsheet       |
+| **API Tester**          | Mini Postman — GET/POST/PUT/DELETE, auth, headers, cURL export |
+| **Docker Generator**    | Generate docker-compose.yml + Dockerfile + .env.example        |
+| **ENV Comparator**      | Compare two .env files — missing, extra, and changed keys      |
+| **Markdown Preview**    | GitHub-style Markdown editor + split preview                   |
+| **cURL Converter**      | Convert cURL to JS/Python/axios/got/HTTPie                     |
 | **AI Commit Generator** | Git diff → conventional commit messages (local + AI providers) |
-| **OpenAPI Viewer** | Render Swagger/OpenAPI specs interactively |
-| **Base64 Tool** | Encode/decode text, files, and images |
+| **OpenAPI Viewer**      | Render Swagger/OpenAPI specs interactively                     |
+| **Base64 Tool**         | Encode/decode text, files, and images                          |
 
 ### 🎁 15 Bonus Tools
 
-| Tool | Description |
-| ------ | ------------- |
-| **Password Generator** | Cryptographic passwords with entropy meter |
-| **Hash Generator** | SHA-1/256/384/512, HMAC, file hashing, verify |
-| **Timestamp Converter** | Unix ↔ human-readable dates, batch, live clock |
-| **Color Picker** | HEX/RGB/HSL/HSV/CMYK, WCAG contrast, shades palette |
-| **URL Encoder** | Encode/decode, URL parser, URL builder |
-| **QR Code Generator** | Text, URL, vCard, WiFi, Email, SMS — download PNG |
-| **JSON Compare** | Deep diff two JSON objects — added/removed/changed |
-| **CSV ↔ JSON** | Convert CSV to JSON and back with table preview |
-| **XML Formatter** | Format, minify, validate XML |
-| **YAML Formatter** | Format YAML, convert YAML ↔ JSON |
-| **Lorem Ipsum** | Words, sentences, paragraphs, HTML output |
-| **Diff Checker** | Line-level text diff — split and unified views |
-| **Cron Parser** | Human-readable cron descriptions + next N execution times |
-| **HTML Entity Encoder** | Encode/decode HTML entities + reference table |
-| **Barcode Generator** | Code128, EAN-13, UPC-A, Code39 — download PNG/SVG |
+| Tool                    | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| **Password Generator**  | Cryptographic passwords with entropy meter                |
+| **Hash Generator**      | SHA-1/256/384/512, HMAC, file hashing, verify             |
+| **Timestamp Converter** | Unix ↔ human-readable dates, batch, live clock            |
+| **Color Picker**        | HEX/RGB/HSL/HSV/CMYK, WCAG contrast, shades palette       |
+| **URL Encoder**         | Encode/decode, URL parser, URL builder                    |
+| **QR Code Generator**   | Text, URL, vCard, WiFi, Email, SMS — download PNG         |
+| **JSON Compare**        | Deep diff two JSON objects — added/removed/changed        |
+| **CSV ↔ JSON**          | Convert CSV to JSON and back with table preview           |
+| **XML Formatter**       | Format, minify, validate XML                              |
+| **YAML Formatter**      | Format YAML, convert YAML ↔ JSON                          |
+| **Lorem Ipsum**         | Words, sentences, paragraphs, HTML output                 |
+| **Diff Checker**        | Line-level text diff — split and unified views            |
+| **Cron Parser**         | Human-readable cron descriptions + next N execution times |
+| **HTML Entity Encoder** | Encode/decode HTML entities + reference table             |
+| **Barcode Generator**   | Code128, EAN-13, UPC-A, Code39 — download PNG/SVG         |
 
 ### 🎨 UI/UX
 
@@ -74,7 +74,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/developer-toolkit.git
+git clone https://github.com/Vimantha-Dilshan/developer-toolkit.git
 cd developer-toolkit
 
 # Open in browser (any static file server)
@@ -184,18 +184,18 @@ export function unmount() {
 
 ### Services
 
-| Service | Responsibility |
-| --------- | --------------- |
-| `themeService` | Dark/light toggle, persisted to localStorage |
-| `clipboardService` | `navigator.clipboard` with fallback |
-| `downloadService` | Blob download helpers |
-| `toastService` | Lightweight toast notifications |
-| `settingsService` | User preferences (font size, tab size, etc.) |
-| `historyService` | Recently visited tools |
-| `favoritesService` | Starred tools |
+| Service             | Responsibility                                    |
+| ------------------- | ------------------------------------------------- |
+| `themeService`      | Dark/light toggle, persisted to localStorage      |
+| `clipboardService`  | `navigator.clipboard` with fallback               |
+| `downloadService`   | Blob download helpers                             |
+| `toastService`      | Lightweight toast notifications                   |
+| `settingsService`   | User preferences (font size, tab size, etc.)      |
+| `historyService`    | Recently visited tools                            |
+| `favoritesService`  | Starred tools                                     |
 | `aiProviderService` | OpenAI / Claude / Gemini / local commit generator |
-| `analyticsService` | Privacy-respecting usage events |
-| `keyboardService` | Global keyboard shortcut registration |
+| `analyticsService`  | Privacy-respecting usage events                   |
+| `keyboardService`   | Global keyboard shortcut registration             |
 
 ### Event Bus
 
