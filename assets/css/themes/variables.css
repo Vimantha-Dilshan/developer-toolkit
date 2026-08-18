@@ -1,0 +1,207 @@
+/**
+ * Design Tokens — CSS Custom Properties
+ * =======================================
+ * Single source of truth for all design tokens.
+ * Dark mode is default; light mode overrides under `.light`.
+ */
+
+/* ─────────────────────────────────────────────────────────
+   DARK THEME (Default)
+──────────────────────────────────────────────────────── */
+:root,
+.dark {
+    /* ── Backgrounds ── */
+    --bg-primary: #0a0a0b;
+    --bg-secondary: #111113;
+    --bg-tertiary: #18181b;
+    --bg-overlay: rgba(0, 0, 0, 0.75);
+
+    /* ── Surfaces (elevated components) ── */
+    --surface-primary: #111113;
+    --surface-secondary: #18181b;
+    --surface-hover: #1f1f24;
+    --surface-active: #26262c;
+    --surface-input: #18181b;
+
+    /* ── Borders ── */
+    --border-primary: rgba(255, 255, 255, 0.06);
+    --border-secondary: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --border-focus: rgba(16, 185, 129, 0.55);
+
+    /* ── Text ── */
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #71717a;
+    --text-disabled: #3f3f46;
+    --text-inverse: #0a0a0b;
+    --text-on-accent: #ffffff;
+
+    /* ── Accent (Emerald) ── */
+    --accent-50: #ecfdf5;
+    --accent-100: #d1fae5;
+    --accent-200: #a7f3d0;
+    --accent-300: #6ee7b7;
+    --accent-400: #34d399;
+    --accent-500: #10b981;
+    --accent-600: #059669;
+    --accent-700: #047857;
+    --accent-800: #065f46;
+    --accent-900: #064e3b;
+    --accent-glow: rgba(16, 185, 129, 0.20);
+
+    /* ── Semantic Colors ── */
+    --color-success: #22c55e;
+    --color-success-bg: rgba(34, 197, 94, 0.1);
+    --color-success-text: #4ade80;
+    --color-warning: #f59e0b;
+    --color-warning-bg: rgba(245, 158, 11, 0.1);
+    --color-warning-text: #fbbf24;
+    --color-error: #ef4444;
+    --color-error-bg: rgba(239, 68, 68, 0.1);
+    --color-error-text: #f87171;
+    --color-info: #3b82f6;
+    --color-info-bg: rgba(59, 130, 246, 0.1);
+    --color-info-text: #60a5fa;
+
+    /* ── Gradients ── */
+    --gradient-accent: linear-gradient(135deg, #34d399 0%, #059669 100%);
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.08) 0%, transparent 60%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.01) 100%);
+    --gradient-sidebar: linear-gradient(180deg, rgba(16, 185, 129, 0.04) 0%, transparent 100%);
+    --gradient-shimmer: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.05) 50%, transparent 100%);
+
+    /* ── Glassmorphism ── */
+    --glass-bg: rgba(17, 17, 19, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-blur: blur(20px);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    /* ── Shadows ── */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.35), 0 4px 6px rgba(0, 0, 0, 0.2);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.4), 0 8px 10px rgba(0, 0, 0, 0.25);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 0 1px var(--accent-500), 0 0 20px var(--accent-glow);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border-primary);
+
+    /* ── Radius ── */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 20px;
+    --radius-3xl: 24px;
+    --radius-full: 9999px;
+
+    /* ── Spacing ── */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-20: 5rem;
+    --space-24: 6rem;
+
+    /* ── Layout ── */
+    --sidebar-width: 260px;
+    --sidebar-collapsed-width: 64px;
+    --topbar-height: 60px;
+    --content-max-width: 1400px;
+
+    /* ── Z-Index ── */
+    --z-below: -1;
+    --z-base: 0;
+    --z-raised: 10;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+    --z-toast: 500;
+    --z-tooltip: 600;
+    --z-max: 9999;
+
+    /* ── Transitions ── */
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    /* iOS decelerate — fast in, smooth stop  */
+    --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+    /* symmetric, smooth */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    /* spring — slight overshoot             */
+    --ease-press: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* press feedback                        */
+
+    --transition-fast: 160ms var(--ease-out);
+    --transition-normal: 260ms var(--ease-out);
+    --transition-slow: 380ms var(--ease-out);
+    --transition-bounce: 420ms var(--ease-spring);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LIGHT THEME
+──────────────────────────────────────────────────────── */
+.light {
+    /* ── Backgrounds ── */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+
+    /* ── Surfaces ── */
+    --surface-primary: #ffffff;
+    --surface-secondary: #f8fafc;
+    --surface-hover: #f1f5f9;
+    --surface-active: #e2e8f0;
+    --surface-input: #f8fafc;
+
+    /* ── Borders ── */
+    --border-primary: rgba(0, 0, 0, 0.07);
+    --border-secondary: rgba(0, 0, 0, 0.12);
+    --border-strong: rgba(0, 0, 0, 0.20);
+    --border-focus: rgba(5, 150, 105, 0.55);
+
+    /* ── Text ── */
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-tertiary: #94a3b8;
+    --text-disabled: #cbd5e1;
+    --text-inverse: #ffffff;
+    --text-on-accent: #ffffff;
+
+    /* ── Gradients (lighter for light mode) ── */
+    --gradient-hero: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.05) 0%, transparent 60%);
+    --gradient-card: linear-gradient(135deg, rgba(0, 0, 0, 0.02) 0%, rgba(0, 0, 0, 0.01) 100%);
+    --gradient-sidebar: linear-gradient(180deg, rgba(5, 150, 105, 0.03) 0%, transparent 100%);
+
+    /* ── Glassmorphism (light) ── */
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+    /* ── Shadows ── */
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.08), 0 4px 6px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.10), 0 8px 10px rgba(0, 0, 0, 0.06);
+    --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.12);
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px var(--border-primary);
+
+    /* ── Semantic ── */
+    --color-success-bg: rgba(34, 197, 94, 0.08);
+    --color-success-text: #15803d;
+    --color-warning-bg: rgba(245, 158, 11, 0.08);
+    --color-warning-text: #b45309;
+    --color-error-bg: rgba(239, 68, 68, 0.08);
+    --color-error-text: #b91c1c;
+    --color-info-bg: rgba(59, 130, 246, 0.08);
+    --color-info-text: #1d4ed8;
+}

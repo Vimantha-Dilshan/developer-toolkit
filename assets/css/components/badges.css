@@ -1,0 +1,147 @@
+/**
+ * Badges
+ * ======
+ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-full);
+    line-height: 1.4;
+    white-space: nowrap;
+    border: 1px solid transparent;
+}
+
+/* ─── Badge Variants ──────────────────────────────── */
+
+.badge-default {
+    background: var(--surface-secondary);
+    color: var(--text-secondary);
+    border-color: var(--border-primary);
+}
+
+.badge-primary {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--accent-400);
+    border-color: rgba(139, 92, 246, 0.25);
+}
+
+.badge-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+    border-color: rgba(34, 197, 94, 0.25);
+}
+
+.badge-warning {
+    background: var(--color-warning-bg);
+    color: var(--color-warning-text);
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+.badge-error {
+    background: var(--color-error-bg);
+    color: var(--color-error-text);
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.badge-info {
+    background: var(--color-info-bg);
+    color: var(--color-info-text);
+    border-color: rgba(59, 130, 246, 0.25);
+}
+
+/* ─── HTTP Method Badges ──────────────────────────── */
+
+.badge-get {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.25);
+}
+
+.badge-post {
+    background: rgba(59, 130, 246, 0.12);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.25);
+}
+
+.badge-put {
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+.badge-patch {
+    background: rgba(168, 85, 247, 0.12);
+    color: #a855f7;
+    border-color: rgba(168, 85, 247, 0.25);
+}
+
+.badge-delete {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+/* ─── Status Code Badges ──────────────────────────── */
+
+.badge-2xx {
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.25);
+}
+
+.badge-3xx {
+    background: rgba(59, 130, 246, 0.12);
+    color: #3b82f6;
+    border-color: rgba(59, 130, 246, 0.25);
+}
+
+.badge-4xx {
+    background: rgba(245, 158, 11, 0.12);
+    color: #f59e0b;
+    border-color: rgba(245, 158, 11, 0.25);
+}
+
+.badge-5xx {
+    background: rgba(239, 68, 68, 0.12);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+/* ─── Dot Badge ───────────────────────────────────── */
+
+.badge-dot {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: 2px 6px;
+}
+
+.badge-dot::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+    flex-shrink: 0;
+}
+
+/* ─── Tag ─────────────────────────────────────────── */
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 1px 6px;
+    background: var(--surface-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-xs);
+    font-size: 10px;
+    font-weight: var(--font-medium);
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+    text-transform: lowercase;
+}

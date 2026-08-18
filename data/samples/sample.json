@@ -1,0 +1,54 @@
+{
+    "name": "developer-toolkit",
+    "version": "1.0.0",
+    "description": "Navigate the Universe of Code",
+    "author": {
+        "name": "Orion",
+        "email": "hello@example.com",
+        "url": "https://github.com/your-username/developer-toolkit"
+    },
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/developer-toolkit.git"
+    },
+    "keywords": [
+        "developer",
+        "tools",
+        "json",
+        "jwt",
+        "regex",
+        "sql",
+        "api",
+        "docker",
+        "markdown"
+    ],
+    "tools": {
+        "json-formatter": {
+            "enabled": true,
+            "version": "1.0.0"
+        },
+        "jwt-decoder": {
+            "enabled": true,
+            "version": "1.0.0"
+        },
+        "uuid-generator": {
+            "enabled": true,
+            "version": "1.0.0"
+        },
+        "sql-formatter": {
+            "enabled": true,
+            "version": "1.0.0"
+        },
+        "regex-tester": {
+            "enabled": true,
+            "version": "1.0.0"
+        }
+    },
+    "config": {
+        "maxHistoryItems": 50,
+        "maxFavorites": 20,
+        "defaultTheme": "dark",
+        "defaultFontSize": 14
+    }
+}

@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+                            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Home -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- ── Formatters ─────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/json-formatter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/sql-formatter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/xml-formatter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/yaml-formatter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ── Generators ────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/uuid-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/password-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/docker-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/lorem-ipsum</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/qr-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/barcode-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ── Testers ───────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/regex-tester</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/api-tester</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/diff-checker</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/cron-parser</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ── Converters ────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/markdown-preview</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/curl-converter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/csv-json</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/timestamp-converter</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ── Analyzers ─────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/jwt-decoder</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/env-comparator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/json-compare</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/hash-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ── Encoders / Decoders ───────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/base64-tool</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/url-encoder</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/html-encoder</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- ── Design ────────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/color-picker</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ── AI Powered ────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/ai-commit-generator</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- ── API / Docs ────────────────────────────────────────────── -->
+    <url>
+        <loc>https://vimantha-dilshan.github.io/developer-toolkit/tool/openapi-viewer</loc>
+        <lastmod>2026-08-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>

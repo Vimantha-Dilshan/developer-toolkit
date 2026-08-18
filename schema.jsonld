@@ -1,0 +1,271 @@
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebApplication",
+            "@id": "https://vimantha-dilshan.github.io/developer-toolkit/#app",
+            "name": "Orion",
+            "alternateName": "Orion Developer Toolkit",
+            "description": "Orion is a free, open-source, offline-capable Progressive Web App containing 28 developer tools that work entirely inside the browser with no backend required.",
+            "url": "https://vimantha-dilshan.github.io/developer-toolkit/",
+            "applicationCategory": "DeveloperApplication",
+            "operatingSystem": "Any (browser-based)",
+            "browserRequirements": "Requires a modern browser with JavaScript enabled",
+            "softwareVersion": "1.0.0",
+            "datePublished": "2026-08-04",
+            "dateModified": "2026-08-04",
+            "inLanguage": "en",
+            "isAccessibleForFree": true,
+            "license": "https://opensource.org/licenses/MIT",
+            "author": {
+                "@type": "Organization",
+                "name": "Orion Contributors",
+                "url": "https://github.com/Vimantha-Dilshan/developer-toolkit"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Orion Contributors",
+                "url": "https://github.com/Vimantha-Dilshan/developer-toolkit"
+            },
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+            },
+            "featureList": [
+                "JSON Formatter and Validator",
+                "SQL Formatter",
+                "XML Formatter",
+                "YAML Formatter",
+                "UUID / ULID / NanoID Generator",
+                "Password Generator",
+                "Docker Compose Generator",
+                "Lorem Ipsum Generator",
+                "QR Code Generator",
+                "Barcode Generator",
+                "Regex Tester",
+                "API Tester",
+                "Diff Checker",
+                "Cron Expression Parser",
+                "Markdown Preview",
+                "cURL Converter",
+                "CSV to JSON Converter",
+                "Timestamp Converter",
+                "JWT Decoder",
+                "ENV Comparator",
+                "JSON Compare",
+                "Hash Generator",
+                "Base64 Encoder / Decoder",
+                "URL Encoder / Decoder",
+                "HTML Encoder / Decoder",
+                "Color Picker",
+                "AI Commit Generator",
+                "OpenAPI Viewer",
+                "Offline support via Service Worker",
+                "Progressive Web App (PWA)",
+                "Command palette with keyboard shortcuts",
+                "Dark and light theme"
+            ],
+            "screenshot": "https://vimantha-dilshan.github.io/developer-toolkit/assets/images/og-image.png",
+            "sameAs": [
+                "https://github.com/Vimantha-Dilshan/developer-toolkit"
+            ]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "https://vimantha-dilshan.github.io/developer-toolkit/#website",
+            "url": "https://vimantha-dilshan.github.io/developer-toolkit/",
+            "name": "Orion — Navigate the Universe of Code",
+            "description": "28 free browser-based developer tools. No backend, no login, works offline.",
+            "inLanguage": "en",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://vimantha-dilshan.github.io/developer-toolkit/?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+            }
+        },
+        {
+            "@type": "BreadcrumbList",
+            "@id": "https://vimantha-dilshan.github.io/developer-toolkit/#breadcrumbs",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "JSON Formatter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/json-formatter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "SQL Formatter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/sql-formatter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 4,
+                    "name": "XML Formatter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/xml-formatter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 5,
+                    "name": "YAML Formatter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/yaml-formatter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 6,
+                    "name": "UUID Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/uuid-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 7,
+                    "name": "Password Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/password-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 8,
+                    "name": "Docker Compose Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/docker-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 9,
+                    "name": "Lorem Ipsum Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/lorem-ipsum"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 10,
+                    "name": "QR Code Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/qr-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 11,
+                    "name": "Barcode Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/barcode-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 12,
+                    "name": "Regex Tester",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/regex-tester"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 13,
+                    "name": "API Tester",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/api-tester"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 14,
+                    "name": "Diff Checker",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/diff-checker"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 15,
+                    "name": "Cron Expression Parser",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/cron-parser"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 16,
+                    "name": "Markdown Preview",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/markdown-preview"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 17,
+                    "name": "cURL Converter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/curl-converter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 18,
+                    "name": "CSV to JSON Converter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/csv-json"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 19,
+                    "name": "Timestamp Converter",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/timestamp-converter"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 20,
+                    "name": "JWT Decoder",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/jwt-decoder"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 21,
+                    "name": "ENV Comparator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/env-comparator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 22,
+                    "name": "JSON Compare",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/json-compare"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 23,
+                    "name": "Hash Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/hash-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 24,
+                    "name": "Base64 Tool",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/base64-tool"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 25,
+                    "name": "URL Encoder / Decoder",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/url-encoder"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 26,
+                    "name": "HTML Encoder / Decoder",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/html-encoder"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 27,
+                    "name": "Color Picker",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/color-picker"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 28,
+                    "name": "AI Commit Generator",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/ai-commit-generator"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 29,
+                    "name": "OpenAPI Viewer",
+                    "item": "https://vimantha-dilshan.github.io/developer-toolkit/tool/openapi-viewer"
+                }
+            ]
+        }
+    ]
+}

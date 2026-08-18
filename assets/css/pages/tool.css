@@ -1,0 +1,280 @@
+/**
+ * Tool Page Layout
+ * ================
+ */
+
+/* ─── Tool Page ───────────────────────────────────── */
+
+.tool-page {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Tool Header ─────────────────────────────────── */
+
+.tool-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-6);
+    border-bottom: 1px solid var(--border-primary);
+    flex-wrap: wrap;
+}
+
+.tool-header-left {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+}
+
+.tool-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-lg);
+    background: rgba(139, 92, 246, 0.12);
+    color: var(--accent-400);
+    flex-shrink: 0;
+}
+
+.tool-header-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.tool-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: var(--tracking-tight);
+    line-height: 1.2;
+    margin-bottom: var(--space-1);
+}
+
+.tool-description {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    line-height: var(--leading-relaxed);
+    max-width: 600px;
+}
+
+.tool-header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-shrink: 0;
+}
+
+/* ─── Tool Layout Variants ────────────────────────── */
+
+/* Standard: top toolbar + main area */
+.tool-layout-standard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    flex: 1;
+}
+
+/* Split: left input + right output */
+.tool-layout-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+    flex: 1;
+    min-height: 0;
+}
+
+.tool-layout-split-lg {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+/* Stacked: top + bottom */
+.tool-layout-stacked {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--space-4);
+    flex: 1;
+    min-height: 0;
+}
+
+/* Full: single main area */
+.tool-layout-full {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ─── Tool Panel ──────────────────────────────────── */
+
+.tool-panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--surface-primary);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    min-height: 0;
+}
+
+.tool-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    flex-shrink: 0;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+}
+
+.tool-panel-title {
+    font-size: var(--text-xs);
+    font-weight: var(--font-semibold);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.tool-panel-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+}
+
+.tool-panel-body {
+    flex: 1;
+    overflow: auto;
+    min-height: 0;
+}
+
+/* ─── Tool Tabs ───────────────────────────────────── */
+
+.tool-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-primary);
+    background: var(--surface-secondary);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.tool-tabs::-webkit-scrollbar {
+    display: none;
+}
+
+.tool-tab {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--text-tertiary);
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tool-tab:hover {
+    color: var(--text-secondary);
+    background: var(--surface-hover);
+}
+
+.tool-tab.active {
+    color: var(--accent-400);
+    border-bottom-color: var(--accent-500);
+}
+
+.tool-tab:focus-visible {
+    outline: 2px solid var(--accent-500);
+    outline-offset: -2px;
+}
+
+/* ─── Tool Options Bar ────────────────────────────── */
+
+.tool-options-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--surface-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    flex-wrap: wrap;
+}
+
+.tool-options-group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.tool-options-label {
+    font-size: var(--text-xs);
+    color: var(--text-tertiary);
+    white-space: nowrap;
+}
+
+/* ─── Result/Output Styling ───────────────────────── */
+
+.result-success {
+    padding: var(--space-4);
+    background: var(--color-success-bg);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--color-success-text);
+    font-size: var(--text-sm);
+}
+
+.result-error {
+    padding: var(--space-4);
+    background: var(--color-error-bg);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--color-error-text);
+    font-size: var(--text-sm);
+    font-family: var(--font-mono);
+}
+
+.result-warning {
+    padding: var(--space-4);
+    background: var(--color-warning-bg);
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: var(--radius-md);
+    color: var(--color-warning-text);
+    font-size: var(--text-sm);
+}
+
+/* ─── Responsive Tool Layout ──────────────────────── */
+
+@media (max-width: 767px) {
+
+    .tool-layout-split,
+    .tool-layout-split-lg {
+        grid-template-columns: 1fr;
+    }
+
+    .tool-header {
+        flex-direction: column;
+        gap: var(--space-3);
+    }
+
+    .tool-header-actions {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

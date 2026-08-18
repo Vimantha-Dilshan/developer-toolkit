@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+    <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#047857;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34d399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background rounded square -->
+    <rect width="64" height="64" rx="14" ry="14" fill="url(#grad)" />
+
+    <!-- Orion constellation lines (faint) -->
+    <!-- Shoulders -->
+    <line x1="15" y1="14" x2="49" y2="12" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <!-- Left side: Betelgeuse → Belt left -->
+    <line x1="15" y1="14" x2="19" y2="30" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <!-- Right side: Bellatrix → Belt right -->
+    <line x1="49" y1="12" x2="45" y2="28" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <!-- Belt -->
+    <line x1="19" y1="30" x2="32" y2="27" stroke="white" stroke-width="0.7" stroke-opacity="0.5"/>
+    <line x1="32" y1="27" x2="45" y2="28" stroke="white" stroke-width="0.7" stroke-opacity="0.5"/>
+    <!-- Feet -->
+    <line x1="15" y1="52" x2="19" y2="30" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <line x1="49" y1="50" x2="45" y2="28" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <!-- Feet bottom -->
+    <line x1="15" y1="52" x2="49" y2="50" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <!-- Sword -->
+    <line x1="32" y1="27" x2="31" y2="36" stroke="white" stroke-width="0.7" stroke-opacity="0.35"/>
+    <line x1="31" y1="36" x2="30" y2="44" stroke="white" stroke-width="0.7" stroke-opacity="0.25"/>
+
+    <!-- Orion constellation stars -->
+    <!-- Betelgeuse (top-left shoulder) -->
+    <circle cx="15" cy="14" r="2.8" fill="white" fill-opacity="0.95"/>
+    <!-- Bellatrix (top-right shoulder) -->
+    <circle cx="49" cy="12" r="2.2" fill="white" fill-opacity="0.85"/>
+    <!-- Belt: Alnitak -->
+    <circle cx="19" cy="30" r="2.6" fill="white" fill-opacity="1"/>
+    <!-- Belt: Alnilam -->
+    <circle cx="32" cy="27" r="2.6" fill="white" fill-opacity="1"/>
+    <!-- Belt: Mintaka -->
+    <circle cx="45" cy="28" r="2.6" fill="white" fill-opacity="1"/>
+    <!-- Rigel (bottom-right foot) — brightest, slightly larger -->
+    <circle cx="49" cy="50" r="3" fill="white" fill-opacity="1"/>
+    <!-- Saiph (bottom-left foot) -->
+    <circle cx="15" cy="52" r="2.2" fill="white" fill-opacity="0.85"/>
+    <!-- Sword stars (small) -->
+    <circle cx="31" cy="36" r="1.4" fill="white" fill-opacity="0.8"/>
+    <circle cx="30" cy="44" r="1.1" fill="white" fill-opacity="0.6"/>
+
+    <!-- Tiny background stars -->
+    <circle cx="6" cy="6" r="0.8" fill="white" fill-opacity="0.5"/>
+    <circle cx="56" cy="22" r="0.7" fill="white" fill-opacity="0.4"/>
+    <circle cx="8" cy="40" r="0.6" fill="white" fill-opacity="0.35"/>
+    <circle cx="58" cy="58" r="0.8" fill="white" fill-opacity="0.45"/>
+    <circle cx="38" cy="5" r="0.6" fill="white" fill-opacity="0.35"/>
+    <circle cx="5" cy="28" r="0.5" fill="white" fill-opacity="0.3"/>
+</svg>

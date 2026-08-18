@@ -1,0 +1,411 @@
+/**
+ * Topbar / Navbar Component
+ * ==========================
+ */
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    height: var(--topbar-height);
+    padding: 0 var(--space-5);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--border-primary);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    z-index: var(--z-sticky);
+    overflow: hidden;
+}
+
+/* ─── Topbar star field (Orion vibe) ──────────────── */
+
+/* Twinkling keyframes — two out-of-phase cycles */
+@keyframes topbarTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.65;
+    }
+
+    18% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 0.25;
+    }
+
+    70% {
+        opacity: 0.90;
+    }
+
+    88% {
+        opacity: 0.40;
+    }
+}
+
+@keyframes topbarTwinkle2 {
+
+    0%,
+    100% {
+        opacity: 0.50;
+    }
+
+    12% {
+        opacity: 0.20;
+    }
+
+    38% {
+        opacity: 0.95;
+    }
+
+    62% {
+        opacity: 0.35;
+    }
+
+    82% {
+        opacity: 1;
+    }
+}
+
+@keyframes topbarBeltPulse {
+
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+
+    50% {
+        opacity: 0.95;
+    }
+}
+
+/* Star cluster — visible only in the breadcrumb/left zone.
+   mask-image fades them out before the search bar starts (~40 % width).
+   All box-shadow y values are within the 60 px topbar height (4–55 px). */
+.topbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: topbarTwinkle 5s ease-in-out infinite;
+
+    /* Mask: fully opaque left → fades out at 38 % (before search bar) */
+    mask-image: linear-gradient(to right,
+            black 0%,
+            black 35%,
+            transparent 42%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            black 0%,
+            black 35%,
+            transparent 42%,
+            transparent 100%);
+
+    box-shadow:
+        /* white stars — varying opacity / size for depth */
+        42px 12px 0 0.5px rgba(255, 255, 255, 0.40),
+        98px 44px 0 0.5px rgba(255, 255, 255, 0.30),
+        165px 8px 0 0.5px rgba(255, 255, 255, 0.45),
+        230px 50px 0 0.5px rgba(255, 255, 255, 0.28),
+        295px 22px 0 0.5px rgba(255, 255, 255, 0.38),
+        360px 54px 0 0.5px rgba(255, 255, 255, 0.25),
+        420px 16px 0 0.5px rgba(255, 255, 255, 0.42),
+        500px 38px 0 0.5px rgba(255, 255, 255, 0.30),
+        570px 6px 0 0.5px rgba(255, 255, 255, 0.35),
+        640px 48px 0 0.5px rgba(255, 255, 255, 0.28),
+        720px 20px 0 0.5px rgba(255, 255, 255, 0.40),
+        800px 42px 0 0.5px rgba(255, 255, 255, 0.25),
+        870px 10px 0 0.5px rgba(255, 255, 255, 0.35),
+        940px 54px 0 0.5px rgba(255, 255, 255, 0.30),
+
+        /* emerald-tinted accent stars */
+        128px 30px 0 1px rgba(52, 211, 153, 0.55),
+        310px 46px 0 1px rgba(52, 211, 153, 0.45),
+        480px 18px 0 1px rgba(52, 211, 153, 0.50),
+        680px 36px 0 1px rgba(52, 211, 153, 0.40),
+
+        /* slightly larger bright stars */
+        70px 52px 0 1px rgba(255, 255, 255, 0.35),
+        195px 26px 0 1px rgba(255, 255, 255, 0.28),
+        390px 4px 0 1px rgba(255, 255, 255, 0.32),
+        545px 56px 0 1px rgba(255, 255, 255, 0.28);
+}
+
+/* Second star group — different animation phase, also masked left */
+.topbar .topbar-breadcrumb::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: topbarTwinkle2 7s ease-in-out infinite;
+    box-shadow:
+        25px 36px 0 0.5px rgba(255, 255, 255, 0.30),
+        80px 18px 0 0.5px rgba(255, 255, 255, 0.42),
+        155px 52px 0 0.5px rgba(255, 255, 255, 0.25),
+        270px 6px 0 0.5px rgba(255, 255, 255, 0.38),
+        340px 40px 0 0.5px rgba(255, 255, 255, 0.28),
+        /* emerald */
+        55px 54px 0 1px rgba(52, 211, 153, 0.40),
+        240px 24px 0 1px rgba(52, 211, 153, 0.45);
+}
+
+/* Orion belt — 3 emerald dots, positioned in the actions zone (far right).
+   Placed using right: offset so it never overlaps the search bar. */
+.topbar::after {
+    content: '';
+    position: absolute;
+    right: 152px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-12deg);
+    width: 4px;
+    height: 4px;
+    background: rgba(52, 211, 153, 0.65);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: topbarBeltPulse 3.5s ease-in-out infinite;
+    box-shadow:
+        13px -3px 0 0 rgba(52, 211, 153, 0.52),
+        /* belt center (Alnilam) */
+        26px -6px 0 0 rgba(52, 211, 153, 0.44);
+    /* belt right (Mintaka)  */
+}
+
+@media (max-width: 1023px) {
+
+    /* Hide belt and second-group stars on mobile/tablet */
+    .topbar::after {
+        display: none;
+    }
+
+    .topbar .topbar-breadcrumb::before {
+        display: none;
+    }
+}
+
+/* ─── Topbar Buttons ──────────────────────────────── */
+
+.topbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.topbar-btn:hover {
+    background: var(--surface-hover);
+    color: var(--text-primary);
+}
+
+.topbar-btn:focus-visible {
+    outline: 2px solid var(--accent-500);
+    outline-offset: 2px;
+}
+
+/* ─── Mobile Menu Button ──────────────────────────── */
+
+#mobile-menu-btn {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    #mobile-menu-btn {
+        display: flex;
+    }
+}
+
+/* ─── Breadcrumb ──────────────────────────────────── */
+
+.topbar-breadcrumb {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    /* anchor the second star-group pseudo-element */
+}
+
+.breadcrumb-list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    list-style: none;
+    overflow: hidden;
+}
+
+.breadcrumb-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+    white-space: nowrap;
+    min-width: 0;
+}
+
+.breadcrumb-item:last-child {
+    color: var(--text-primary);
+    font-weight: var(--font-medium);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+    content: '/';
+    color: var(--text-disabled);
+    font-size: var(--text-xs);
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+    color: var(--text-primary);
+}
+
+/* ─── Topbar Search ────────────────────────────────── */
+
+.topbar-search-wrapper {
+    flex: 0 0 auto;
+}
+
+.topbar-search-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    background: var(--surface-input);
+    border: 1px solid var(--border-primary);
+    border-radius: var(--radius-md);
+    color: var(--text-tertiary);
+    font-size: var(--text-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-width: 360px;
+    max-width: 460px;
+}
+
+.topbar-search-btn:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-secondary);
+    color: var(--text-secondary);
+}
+
+.topbar-search-btn:focus-visible {
+    outline: 2px solid var(--accent-500);
+    outline-offset: -1px;
+}
+
+.topbar-search-icon {
+    flex-shrink: 0;
+}
+
+.topbar-search-text {
+    flex: 1;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topbar-search-kbd {
+    flex-shrink: 0;
+}
+
+/* ─── Topbar Actions ──────────────────────────────── */
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    flex-shrink: 0;
+}
+
+/* ─── Donate Button ───────────────────────────────── */
+
+.topbar-donate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1-5, 6px);
+    padding: var(--space-1) var(--space-3);
+    background: #0070ba;
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+    white-space: nowrap;
+}
+
+.topbar-donate-btn:hover {
+    background: #005ea6;
+    transform: translateY(-1px);
+}
+
+.topbar-donate-btn:active {
+    transform: translateY(0);
+}
+
+.topbar-donate-label {
+    line-height: 1;
+}
+
+/* Theme toggle animation */
+.theme-toggle-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ─── Responsive ──────────────────────────────────── */
+
+@media (max-width: 639px) {
+    .topbar-search-wrapper {
+        display: none;
+    }
+
+    .topbar {
+        padding: 0 var(--space-3);
+        gap: var(--space-2);
+    }
+}
+
+@media (max-width: 767px) {
+    .topbar-search-btn {
+        min-width: 0;
+    }
+
+    .topbar-search-text {
+        display: none;
+    }
+
+    .topbar-search-kbd {
+        display: none;
+    }
+
+    .topbar-donate-label {
+        display: none;
+    }
+}

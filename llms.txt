@@ -1,0 +1,81 @@
+# Orion — Developer Toolkit
+
+> Orion is a free, open-source, offline-capable Progressive Web App that bundles 28 developer tools entirely in the browser. No backend, no login, no tracking.
+
+## Project
+
+- **Homepage**: https://vimantha-dilshan.github.io//developer-toolkit/
+- **Source code**: https://vimantha-dilshan.github.io//developer-toolkit
+- **License**: MIT
+- **Version**: 1.0.0
+- **Stack**: Vanilla JavaScript (ES Modules), HTML5, CSS3 — zero runtime dependencies in the app core
+
+## Purpose
+
+Orion is designed as a fast, privacy-first alternative to online developer tool sites. All processing happens client-side in the browser. Tools work fully offline after the first load via a Service Worker.
+
+## Tools
+
+### Formatters
+- **JSON Formatter** (`/tool/json-formatter`) — Format, validate, minify, and explore JSON with syntax highlighting and tree view.
+- **SQL Formatter** (`/tool/sql-formatter`) — Format SQL queries; supports MySQL, PostgreSQL, SQLite, Oracle, and SQL Server.
+- **XML Formatter** (`/tool/xml-formatter`) — Format, minify, and validate XML documents.
+- **YAML Formatter** (`/tool/yaml-formatter`) — Format, validate, and convert YAML documents.
+
+### Generators
+- **UUID Generator** (`/tool/uuid-generator`) — Generate UUID v1, v4, v7, ULID, and NanoID identifiers in bulk.
+- **Password Generator** (`/tool/password-generator`) — Generate cryptographically secure passwords with custom rules.
+- **Docker Compose Generator** (`/tool/docker-generator`) — Visually generate docker-compose.yml and Dockerfiles for popular stacks.
+- **Lorem Ipsum Generator** (`/tool/lorem-ipsum`) — Generate placeholder Lorem Ipsum text for designs and layouts.
+- **QR Code Generator** (`/tool/qr-generator`) — Generate QR codes for URLs, text, contact cards, and Wi-Fi credentials.
+- **Barcode Generator** (`/tool/barcode-generator`) — Generate CODE128, EAN-13, EAN-8, UPC-A, and other barcode types.
+
+### Testers
+- **Regex Tester** (`/tool/regex-tester`) — Test regular expressions with live match highlighting, flags, and a reference cheatsheet.
+- **API Tester** (`/tool/api-tester`) — Test HTTP APIs directly in the browser with full header, body, and auth support.
+- **Diff Checker** (`/tool/diff-checker`) — Compare two text blocks side by side and highlight differences.
+- **Cron Expression Parser** (`/tool/cron-parser`) — Parse and validate cron expressions with human-readable descriptions.
+
+### Converters
+- **Markdown Preview** (`/tool/markdown-preview`) — Write and preview Markdown with GitHub-styled rendering and HTML export.
+- **cURL Converter** (`/tool/curl-converter`) — Convert cURL commands to Postman collections and vice versa.
+- **CSV ↔ JSON Converter** (`/tool/csv-json`) — Convert CSV to JSON and JSON arrays to CSV with live preview.
+- **Timestamp Converter** (`/tool/timestamp-converter`) — Convert Unix timestamps to human-readable dates and vice versa.
+
+### Analyzers
+- **JWT Decoder** (`/tool/jwt-decoder`) — Decode and inspect JSON Web Tokens; shows header, payload, claims, and expiry countdown.
+- **ENV Comparator** (`/tool/env-comparator`) — Compare .env files to find missing keys, duplicates, and extra variables.
+- **JSON Compare** (`/tool/json-compare`) — Deep compare two JSON objects and highlight structural differences.
+- **Hash Generator** (`/tool/hash-generator`) — Generate MD5, SHA-1, SHA-256, SHA-384, SHA-512, and other hashes.
+
+### Encoders / Decoders
+- **Base64 Tool** (`/tool/base64-tool`) — Encode and decode Base64 strings, files, and images.
+- **URL Encoder / Decoder** (`/tool/url-encoder`) — Encode and decode URL strings and query parameters.
+- **HTML Encoder / Decoder** (`/tool/html-encoder`) — Encode and decode HTML entities to prevent XSS.
+
+### Design
+- **Color Picker** (`/tool/color-picker`) — Pick colors and convert between HEX, RGB, HSL, HSB, and CSS formats.
+
+### AI Powered
+- **AI Commit Generator** (`/tool/ai-commit-generator`) — Generate conventional git commit messages from a diff using an AI provider.
+
+### OpenAPI / API Docs
+- **OpenAPI Viewer** (`/tool/openapi-viewer`) — Render and browse OpenAPI 3.x / Swagger 2.x specification files.
+
+## Key Features
+
+- Works entirely offline after first visit (Service Worker + Cache API)
+- No data ever leaves the browser — all processing is client-side
+- Installable as a PWA on desktop and mobile
+- Command palette (Ctrl/Cmd + K) for fast tool navigation
+- Keyboard shortcuts for all major tools
+- Dark / Light / System theme support
+- Favourites and recent-tools history stored in localStorage
+
+## Permissions and Data
+
+Orion does not collect, store, or transmit any user data. There is no analytics by default. All tool state is stored locally in the browser's localStorage under the `devtk_` prefix and never leaves the device.
+
+## Contributing
+
+Contributions welcome via GitHub pull request. Each tool lives in its own self-contained module under `tools/<tool-id>/index.js`.

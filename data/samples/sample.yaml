@@ -1,0 +1,69 @@
+# Orion - Sample YAML Configuration
+# Use this file with the YAML Formatter tool
+
+app:
+  name: developer-toolkit
+  version: "1.0.0"
+  description: Navigate the Universe of Code
+  url: https://your-username.github.io/developer-toolkit
+
+server:
+  host: "0.0.0.0"
+  port: 3000
+  debug: false
+  cors:
+    enabled: true
+    origins:
+      - https://developer-toolkit.app
+      - http://localhost:3000
+
+database:
+  host: localhost
+  port: 5432
+  name: devtools
+  ssl: true
+  pool:
+    min: 2
+    max: 10
+    idle_timeout_ms: 30000
+
+tools:
+  - id: json-formatter
+    category: formatters
+    enabled: true
+    shortcut: "G J"
+
+  - id: jwt-decoder
+    category: security
+    enabled: true
+    shortcut: "G W"
+
+  - id: uuid-generator
+    category: generators
+    enabled: true
+    shortcut: "G U"
+
+  - id: regex-tester
+    category: testing
+    enabled: true
+    shortcut: "G R"
+
+features:
+  command_palette: true
+  keyboard_shortcuts: true
+  pwa: true
+  dark_mode: true
+  favorites: true
+  history:
+    enabled: true
+    max_items: 50
+
+logging:
+  level: info
+  format: json
+  outputs:
+    - type: console
+    - type: file
+      path: /var/log/devtools.log
+      max_size_mb: 100
+      rotate: true

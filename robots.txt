@@ -1,0 +1,14 @@
+# robots.txt — Orion Developer Toolkit
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Allow: /
+
+# Block crawling of raw source assets that offer no indexable value
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /assets/icons/
+Disallow: /data/
+
+# Sitemap
+Sitemap: https://vimantha-dilshan.github.io/developer-toolkit/sitemap.xml

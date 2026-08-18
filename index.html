@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- ═══════════════════════════════════════════════════
+       SEO & META
+  ════════════════════════════════════════════════════ -->
+    <title>Orion — Navigate the Universe of Code</title>
+    <meta name="description"
+        content="Orion: 30+ free browser-based developer tools including JSON formatter, JWT decoder, UUID generator, SQL formatter, regex tester, API tester, Base64, Markdown preview and more. No backend, no login, works offline." />
+    <meta name="keywords"
+        content="orion, developer tools, json formatter, jwt decoder, uuid generator, sql formatter, regex tester, api tester, base64 encoder, markdown preview, docker compose generator, curl converter, password generator, hash generator, timestamp converter, color picker, url encoder, qr code generator, diff checker, cron parser" />
+    <meta name="author" content="Orion" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vimantha-dilshan.github.io/developer-toolkit/" />
+
+    <!-- ═══════════════════════════════════════════════════
+       OPEN GRAPH
+  ════════════════════════════════════════════════════ -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Orion — Navigate the Universe of Code" />
+    <meta property="og:description"
+        content="30+ free browser-based developer tools. No backend, no login required. Works offline." />
+    <meta property="og:url" content="https://vimantha-dilshan.github.io/developer-toolkit/" />
+    <meta property="og:image"
+        content="https://vimantha-dilshan.github.io/developer-toolkit/assets/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Orion" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- ═══════════════════════════════════════════════════
+       TWITTER CARD
+  ════════════════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Orion — Navigate the Universe of Code" />
+    <meta name="twitter:description"
+        content="30+ free developer tools that work entirely in your browser. JSON, JWT, UUID, SQL, Regex, API Tester and more." />
+    <meta name="twitter:image"
+        content="https://vimantha-dilshan.github.io/developer-toolkit/assets/images/og-image.png" />
+
+    <!-- ═══════════════════════════════════════════════════
+       PWA
+  ════════════════════════════════════════════════════ -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#10b981" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#059669" media="(prefers-color-scheme: light)" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Orion" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Orion" />
+
+    <!-- ═══════════════════════════════════════════════════
+       FAVICONS
+  ════════════════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/icons/favicon-96.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" />
+
+    <!-- ═══════════════════════════════════════════════════
+       FONTS
+  ════════════════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════════════
+       EXTERNAL LIBRARIES (CDN)
+  ════════════════════════════════════════════════════ -->
+    <!-- Highlight.js for syntax highlighting -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
+        id="hljs-theme" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
+
+    <!-- Marked.js for Markdown -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js" defer></script>
+
+    <!-- QRCode.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+
+    <!-- JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+    <!-- ═══════════════════════════════════════════════════
+       TAILWIND CSS CDN
+  ════════════════════════════════════════════════════ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Consolas', 'Monaco', 'monospace'],
+                    },
+                    colors: {
+                        accent: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.2s ease-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                        'slide-in-right': 'slideInRight 0.3s ease-out',
+                        'scale-in': 'scaleIn 0.2s ease-out',
+                        'spin-slow': 'spin 3s linear infinite',
+                        'pulse-subtle': 'pulseSubtle 2s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════
+       APPLICATION CSS
+  ════════════════════════════════════════════════════ -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- ═══════════════════════════════════════════════════
+       JSON-LD STRUCTURED DATA
+  ════════════════════════════════════════════════════ -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Orion",
+    "description": "Navigate the Universe of Code",
+    "url": "https://vimantha-dilshan.github.io/developer-toolkit/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "JSON Formatter & Validator",
+      "JWT Decoder",
+      "UUID Generator",
+      "SQL Formatter",
+      "Regex Tester",
+      "API Tester",
+      "Docker Compose Generator",
+      "ENV File Comparator",
+      "Markdown Preview",
+      "cURL Converter",
+      "AI Commit Generator",
+      "OpenAPI Viewer",
+      "Base64 Encoder/Decoder",
+      "Password Generator",
+      "Hash Generator",
+      "Timestamp Converter",
+      "Color Picker",
+      "URL Encoder/Decoder",
+      "QR Code Generator",
+      "JSON Compare",
+      "CSV to JSON Converter",
+      "XML Formatter",
+      "YAML Formatter",
+      "Lorem Ipsum Generator",
+      "Diff Checker",
+      "Cron Expression Parser",
+      "HTML Encoder/Decoder"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════
+       APP LOADER
+  ════════════════════════════════════════════════════ -->
+    <div id="app-loader" class="app-loader" role="status" aria-label="Loading Orion">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#047857" />
+                            <stop offset="1" stop-color="#34d399" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="48" height="48" rx="12" fill="url(#logoGrad)" />
+                    <!-- Orion constellation lines -->
+                    <line x1="11" y1="11" x2="37" y2="9" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                    <line x1="11" y1="11" x2="14" y2="24" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                    <line x1="37" y1="9" x2="34" y2="22" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                    <line x1="14" y1="24" x2="24" y2="21" stroke="white" stroke-width="0.7" stroke-opacity="0.55" />
+                    <line x1="24" y1="21" x2="34" y2="22" stroke="white" stroke-width="0.7" stroke-opacity="0.55" />
+                    <line x1="14" y1="24" x2="11" y2="39" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                    <line x1="34" y1="22" x2="37" y2="38" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                    <line x1="11" y1="39" x2="37" y2="38" stroke="white" stroke-width="0.6" stroke-opacity="0.3" />
+                    <line x1="24" y1="21" x2="23" y2="29" stroke="white" stroke-width="0.6" stroke-opacity="0.3" />
+                    <!-- Orion stars -->
+                    <circle cx="11" cy="11" r="2.2" fill="white" fill-opacity="0.9" />
+                    <circle cx="37" cy="9" r="1.8" fill="white" fill-opacity="0.85" />
+                    <circle cx="14" cy="24" r="2.1" fill="white" />
+                    <circle cx="24" cy="21" r="2.1" fill="white" />
+                    <circle cx="34" cy="22" r="2.1" fill="white" />
+                    <circle cx="37" cy="38" r="2.4" fill="white" />
+                    <circle cx="11" cy="39" r="1.8" fill="white" fill-opacity="0.85" />
+                    <circle cx="23" cy="29" r="1.1" fill="white" fill-opacity="0.75" />
+                    <!-- Background twinkle stars -->
+                    <circle cx="4" cy="5" r="0.7" fill="white" fill-opacity="0.4" />
+                    <circle cx="43" cy="3" r="0.6" fill="white" fill-opacity="0.35" />
+                    <circle cx="44" cy="44" r="0.7" fill="white" fill-opacity="0.4" />
+                    <circle cx="5" cy="43" r="0.5" fill="white" fill-opacity="0.3" />
+                    <circle cx="41" cy="16" r="0.5" fill="white" fill-opacity="0.3" />
+                </svg>
+            </div>
+            <div class="loader-spinner" aria-hidden="true"></div>
+            <p class="loader-text">Loading Orion...</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       APP ROOT
+  ════════════════════════════════════════════════════ -->
+    <div id="app" class="app-root" style="opacity: 0; pointer-events: none;" aria-hidden="true">
+
+        <!-- Sidebar Overlay (mobile backdrop) -->
+        <div id="sidebar-overlay" class="sidebar-overlay" aria-hidden="true" tabindex="-1"></div>
+
+        <!-- ═══════════════════════════════════════════════
+         SIDEBAR
+    ════════════════════════════════════════════════ -->
+        <aside id="sidebar" class="sidebar" role="navigation" aria-label="Main navigation">
+
+            <!-- Sidebar Header -->
+            <div class="sidebar-header">
+                <a href="#/" class="sidebar-logo" aria-label="Orion - Go to home">
+                    <div class="sidebar-logo-icon" aria-hidden="true">
+                        <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="sidebarLogoGrad" x1="0" y1="0" x2="48" y2="48"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#047857" />
+                                    <stop offset="1" stop-color="#34d399" />
+                                </linearGradient>
+                                <filter id="logoGlow">
+                                    <feGaussianBlur stdDeviation="1.5" result="blur" />
+                                    <feMerge>
+                                        <feMergeNode in="blur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <rect width="48" height="48" rx="13" fill="url(#sidebarLogoGrad)" />
+                            <!-- Orion constellation lines -->
+                            <line x1="11" y1="11" x2="37" y2="9" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.35" />
+                            <line x1="11" y1="11" x2="14" y2="24" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.35" />
+                            <line x1="37" y1="9" x2="34" y2="22" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.35" />
+                            <line x1="14" y1="24" x2="24" y2="21" stroke="white" stroke-width="0.7"
+                                stroke-opacity="0.55" />
+                            <line x1="24" y1="21" x2="34" y2="22" stroke="white" stroke-width="0.7"
+                                stroke-opacity="0.55" />
+                            <line x1="14" y1="24" x2="11" y2="39" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.35" />
+                            <line x1="34" y1="22" x2="37" y2="38" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.35" />
+                            <line x1="11" y1="39" x2="37" y2="38" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.3" />
+                            <line x1="24" y1="21" x2="23" y2="29" stroke="white" stroke-width="0.6"
+                                stroke-opacity="0.3" />
+                            <!-- Orion stars (with glow) -->
+                            <g filter="url(#logoGlow)">
+                                <circle cx="11" cy="11" r="2.4" fill="white" fill-opacity="0.95" />
+                                <circle cx="37" cy="9" r="2.0" fill="white" fill-opacity="0.9" />
+                                <circle cx="14" cy="24" r="2.2" fill="white" />
+                                <circle cx="24" cy="21" r="2.3" fill="white" />
+                                <circle cx="34" cy="22" r="2.2" fill="white" />
+                                <circle cx="37" cy="38" r="2.6" fill="white" />
+                                <circle cx="11" cy="39" r="2.0" fill="white" fill-opacity="0.9" />
+                                <circle cx="23" cy="29" r="1.2" fill="white" fill-opacity="0.8" />
+                            </g>
+                            <!-- Background twinkle stars -->
+                            <circle cx="4" cy="5" r="0.8" fill="white" fill-opacity="0.5" />
+                            <circle cx="43" cy="3" r="0.7" fill="white" fill-opacity="0.4" />
+                            <circle cx="44" cy="44" r="0.8" fill="white" fill-opacity="0.45" />
+                            <circle cx="5" cy="43" r="0.6" fill="white" fill-opacity="0.35" />
+                            <circle cx="41" cy="16" r="0.6" fill="white" fill-opacity="0.35" />
+                            <circle cx="6" cy="28" r="0.5" fill="white" fill-opacity="0.3" />
+                            <circle cx="43" cy="30" r="0.5" fill="white" fill-opacity="0.3" />
+                        </svg>
+                    </div>
+                    <div class="sidebar-logo-text">
+                        <span class="sidebar-logo-name">Orion</span>
+                        <span class="sidebar-logo-tagline">Developer Toolkit</span>
+                    </div>
+                </a>
+                <button id="sidebar-collapse-btn" class="sidebar-collapse-btn" aria-label="Collapse sidebar"
+                    title="Collapse sidebar">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M11 17l-5-5 5-5M18 17l-5-5 5-5" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Sidebar Search Trigger -->
+            <div class="sidebar-search-wrapper">
+                <button id="sidebar-search-btn" class="sidebar-search-btn"
+                    aria-label="Search tools - Press Cmd+K or Ctrl+K">
+                    <svg class="sidebar-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        aria-hidden="true">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="m21 21-4.35-4.35" />
+                    </svg>
+                    <span class="sidebar-search-placeholder">Search tools...</span>
+                    <span class="sidebar-search-kbd" aria-label="Keyboard shortcut Ctrl K">Ctrl+K</span>
+                </button>
+            </div>
+
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar-nav" id="sidebar-nav" aria-label="Tool navigation">
+
+                <!-- Home -->
+                <div class="nav-section">
+                    <a href="#/" class="nav-item" data-route="home" aria-current="page">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Home</span>
+                    </a>
+                </div>
+
+                <!-- Formatters -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Formatters</div>
+                    <a href="#/tool/json-formatter" class="nav-item" data-tool="json-formatter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="8" y1="13" x2="16" y2="13" />
+                                <line x1="8" y1="17" x2="16" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">JSON Formatter</span>
+                    </a>
+                    <a href="#/tool/sql-formatter" class="nav-item" data-tool="sql-formatter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">SQL Formatter</span>
+                    </a>
+                    <a href="#/tool/xml-formatter" class="nav-item" data-tool="xml-formatter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">XML Formatter</span>
+                    </a>
+                    <a href="#/tool/yaml-formatter" class="nav-item" data-tool="yaml-formatter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="21" y1="10" x2="7" y2="10" />
+                                <line x1="21" y1="6" x2="3" y2="6" />
+                                <line x1="21" y1="14" x2="3" y2="14" />
+                                <line x1="21" y1="18" x2="7" y2="18" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">YAML Formatter</span>
+                    </a>
+                </div>
+
+                <!-- Generators -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Generators</div>
+                    <a href="#/tool/uuid-generator" class="nav-item" data-tool="uuid-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <path
+                                    d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">UUID Generator</span>
+                    </a>
+                    <a href="#/tool/password-generator" class="nav-item" data-tool="password-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Password Generator</span>
+                    </a>
+                    <a href="#/tool/docker-generator" class="nav-item" data-tool="docker-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Docker Generator</span>
+                    </a>
+                    <a href="#/tool/lorem-ipsum" class="nav-item" data-tool="lorem-ipsum">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <line x1="10" y1="9" x2="8" y2="9" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Lorem Ipsum</span>
+                    </a>
+                    <a href="#/tool/qr-generator" class="nav-item" data-tool="qr-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7" />
+                                <rect x="14" y="3" width="7" height="7" />
+                                <rect x="3" y="14" width="7" height="7" />
+                                <path d="M21 14h-3v3h3v3h-3v1h-1v-4h-3v4h-1v-7h3v-1h4v1z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">QR Generator</span>
+                    </a>
+                </div>
+
+                <!-- Testers & Analyzers -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Testers</div>
+                    <a href="#/tool/regex-tester" class="nav-item" data-tool="regex-tester">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.35-4.35" />
+                                <path d="M8 11h6M11 8v6" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Regex Tester</span>
+                    </a>
+                    <a href="#/tool/api-tester" class="nav-item" data-tool="api-tester">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">API Tester</span>
+                    </a>
+                    <a href="#/tool/diff-checker" class="nav-item" data-tool="diff-checker">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9" />
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Diff Checker</span>
+                    </a>
+                    <a href="#/tool/cron-parser" class="nav-item" data-tool="cron-parser">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Cron Parser</span>
+                    </a>
+                </div>
+
+                <!-- Converters -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Converters</div>
+                    <a href="#/tool/markdown-preview" class="nav-item" data-tool="markdown-preview">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Markdown Preview</span>
+                    </a>
+                    <a href="#/tool/curl-converter" class="nav-item" data-tool="curl-converter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">cURL Converter</span>
+                    </a>
+                    <a href="#/tool/csv-json" class="nav-item" data-tool="csv-json">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                <line x1="3" y1="9" x2="21" y2="9" />
+                                <line x1="3" y1="15" x2="21" y2="15" />
+                                <line x1="9" y1="3" x2="9" y2="21" />
+                                <line x1="15" y1="3" x2="15" y2="21" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">CSV ↔ JSON</span>
+                    </a>
+                    <a href="#/tool/timestamp-converter" class="nav-item" data-tool="timestamp-converter">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                                <line x1="16" y1="2" x2="16" y2="6" />
+                                <line x1="8" y1="2" x2="8" y2="6" />
+                                <line x1="3" y1="10" x2="21" y2="10" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Timestamp</span>
+                    </a>
+                </div>
+
+                <!-- Analyzers -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Analyzers</div>
+                    <a href="#/tool/jwt-decoder" class="nav-item" data-tool="jwt-decoder">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                <path d="M7 11V7a5 5 0 0 1 9.9-1" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">JWT Decoder</span>
+                    </a>
+                    <a href="#/tool/env-comparator" class="nav-item" data-tool="env-comparator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 3h7v7H3z" />
+                                <path d="M14 3h7v7h-7z" />
+                                <path d="M14 14h7v7h-7z" />
+                                <path d="M3 14h7v7H3z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">ENV Comparator</span>
+                    </a>
+                    <a href="#/tool/json-compare" class="nav-item" data-tool="json-compare">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 3h12l4 6-10 13L2 9z" />
+                                <path d="M11 3 8 9l4 13 4-13-3-6" />
+                                <line x1="2" y1="9" x2="22" y2="9" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">JSON Compare</span>
+                    </a>
+                    <a href="#/tool/hash-generator" class="nav-item" data-tool="hash-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="4" y1="9" x2="20" y2="9" />
+                                <line x1="4" y1="15" x2="20" y2="15" />
+                                <line x1="10" y1="3" x2="8" y2="21" />
+                                <line x1="16" y1="3" x2="14" y2="21" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Hash Generator</span>
+                    </a>
+                </div>
+
+                <!-- Encoders / Decoders -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Encoders</div>
+                    <a href="#/tool/base64-tool" class="nav-item" data-tool="base64-tool">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="4 7 4 4 20 4 20 7" />
+                                <line x1="9" y1="20" x2="15" y2="20" />
+                                <line x1="12" y1="4" x2="12" y2="20" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Base64 Tool</span>
+                    </a>
+                    <a href="#/tool/url-encoder" class="nav-item" data-tool="url-encoder">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">URL Encoder</span>
+                    </a>
+                    <a href="#/tool/html-encoder" class="nav-item" data-tool="html-encoder">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">HTML Encoder</span>
+                    </a>
+                </div>
+
+                <!-- Design -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">Design</div>
+                    <a href="#/tool/color-picker" class="nav-item" data-tool="color-picker">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="13.5" cy="6.5" r=".5" fill="currentColor" />
+                                <circle cx="17.5" cy="10.5" r=".5" fill="currentColor" />
+                                <circle cx="8.5" cy="7.5" r=".5" fill="currentColor" />
+                                <circle cx="6.5" cy="12.5" r=".5" fill="currentColor" />
+                                <path
+                                    d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Color Picker</span>
+                    </a>
+                    <a href="#/tool/barcode-generator" class="nav-item" data-tool="barcode-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 5v14" />
+                                <path d="M8 5v14" />
+                                <path d="M12 5v14" />
+                                <path d="M17 5v14" />
+                                <path d="M21 5v14" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">Barcode Generator</span>
+                    </a>
+                </div>
+
+                <!-- AI -->
+                <div class="nav-section">
+                    <div class="nav-section-title" role="heading" aria-level="3">AI Powered</div>
+                    <a href="#/tool/ai-commit-generator" class="nav-item" data-tool="ai-commit-generator">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">AI Commit</span>
+                        <span class="nav-badge">AI</span>
+                    </a>
+                    <a href="#/tool/openapi-viewer" class="nav-item" data-tool="openapi-viewer">
+                        <span class="nav-icon" aria-hidden="true">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+                            </svg>
+                        </span>
+                        <span class="nav-label">OpenAPI Viewer</span>
+                    </a>
+                </div>
+
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div class="sidebar-footer">
+                <button id="settings-btn" class="nav-item" aria-label="Open settings">
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">Settings</span>
+                </button>
+                <a href="https://github.com/Vimantha-Dilshan/developer-toolkit" target="_blank"
+                    rel="noopener noreferrer" class="nav-item" aria-label="View source on GitHub">
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">GitHub</span>
+                </a>
+                <button id="about-btn" class="nav-item" aria-label="About the developer">
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="12" y1="8" x2="12" y2="12" />
+                            <line x1="12" y1="16" x2="12.01" y2="16" />
+                        </svg>
+                    </span>
+                    <span class="nav-label">About</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ═══════════════════════════════════════════════
+         MAIN WRAPPER
+    ════════════════════════════════════════════════ -->
+        <div class="main-wrapper" id="main-wrapper">
+
+            <!-- Topbar -->
+            <header class="topbar" id="topbar" role="banner">
+                <!-- Mobile Menu Toggle -->
+                <button id="mobile-menu-btn" class="topbar-btn" aria-label="Toggle navigation menu"
+                    aria-expanded="false" aria-controls="sidebar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="3" y1="12" x2="21" y2="12" />
+                        <line x1="3" y1="6" x2="21" y2="6" />
+                        <line x1="3" y1="18" x2="21" y2="18" />
+                    </svg>
+                </button>
+
+                <!-- Breadcrumb -->
+                <nav class="topbar-breadcrumb" id="breadcrumb" aria-label="Page breadcrumb">
+                    <ol class="breadcrumb-list">
+                        <li class="breadcrumb-item">
+                            <a href="#/" class="breadcrumb-link">Home</a>
+                        </li>
+                    </ol>
+                </nav>
+
+                <!-- Search (Desktop) -->
+                <div class="topbar-search-wrapper" role="search">
+                    <button id="topbar-search-btn" class="topbar-search-btn"
+                        aria-label="Search tools - Press Ctrl+K or Cmd+K">
+                        <svg class="topbar-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            aria-hidden="true">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.35-4.35" />
+                        </svg>
+                        <span class="topbar-search-text">Search 30+ tools...</span>
+                        <kbd class="topbar-search-kbd" aria-label="Keyboard shortcut Ctrl K">Ctrl+K</kbd>
+                    </button>
+                </div>
+
+                <!-- Topbar Actions -->
+                <div class="topbar-actions" role="toolbar" aria-label="Toolbar actions">
+                    <!-- Donate -->
+                    <a href="https://www.paypal.com/ncp/payment/QCCHKWP7ASG8N" target="_blank" rel="noopener noreferrer"
+                        class="topbar-donate-btn" aria-label="Support via PayPal" title="Donate via PayPal">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M7.144 19.532l1.049-5.967A7.27 7.27 0 0 0 8 13c0-4.418 3.582-8 8-8 .85 0 1.668.133 2.432.378C17.3 2.607 14.253 1 10.761 1 6.314 1 2.6 4.474 2.6 8.9c0 2.57 1.214 4.846 3.098 6.32L4.6 21h5.282l.455-1.468H7.144zm9.856-13c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6zm0 10.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zm.5-7h-1v3l2.5 1.5.5-.866-2-1.2V10z" />
+                        </svg>
+                        <span class="topbar-donate-label">Donate</span>
+                    </a>
+
+                    <!-- Keyboard shortcuts hint -->
+                    <button id="keyboard-help-btn" class="topbar-btn" aria-label="Show keyboard shortcuts"
+                        title="Keyboard shortcuts (?)">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                        </svg>
+                    </button>
+
+                    <!-- Favorites -->
+                    <button id="favorites-btn" class="topbar-btn" aria-label="View favorites" title="Favorites">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                    </button>
+
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" class="topbar-btn theme-toggle-btn" aria-label="Toggle dark/light theme"
+                        title="Toggle theme (T)">
+                        <svg id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                        </svg>
+                        <svg id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                            style="display:none">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                        </svg>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <main id="content-area" class="content-area" role="main" tabindex="-1">
+
+                <!-- Content Loading Skeleton -->
+                <div id="content-loading" class="content-loading" aria-hidden="true" style="display:none;">
+                    <div class="skeleton-header">
+                        <div class="skeleton-line skeleton-title"></div>
+                        <div class="skeleton-line skeleton-subtitle"></div>
+                    </div>
+                    <div class="skeleton-body">
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+
+                <!-- Tool Container -->
+                <div id="tool-container" class="tool-container" aria-live="polite" aria-atomic="false">
+                    <!-- Dynamic content renders here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       COMMAND PALETTE
+  ════════════════════════════════════════════════════ -->
+    <div id="command-palette-overlay" class="cp-overlay" role="dialog" aria-modal="true" aria-label="Command palette"
+        style="display:none;">
+        <div class="cp-backdrop" id="cp-backdrop" aria-hidden="true"></div>
+        <div class="cp-container" role="combobox" aria-expanded="true" aria-haspopup="listbox">
+            <div class="cp-header">
+                <svg class="cp-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.35-4.35" />
+                </svg>
+                <input type="text" id="cp-input" class="cp-input" placeholder="Search tools and commands..."
+                    autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"
+                    aria-label="Search tools and commands" aria-autocomplete="list" aria-controls="cp-results"
+                    role="searchbox" />
+                <button id="cp-close" class="cp-close-btn" aria-label="Close command palette">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div id="cp-results" class="cp-results" role="listbox" aria-label="Search results"></div>
+            <div class="cp-footer" aria-hidden="true">
+                <div class="cp-hint"><kbd>↑</kbd><kbd>↓</kbd> Navigate</div>
+                <div class="cp-hint"><kbd>↵</kbd> Open</div>
+                <div class="cp-hint"><kbd>Esc</kbd> Close</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       KEYBOARD SHORTCUTS MODAL
+  ════════════════════════════════════════════════════ -->
+    <div id="keyboard-shortcuts-modal" class="modal-overlay" role="dialog" aria-modal="true"
+        aria-labelledby="shortcuts-title" style="display:none;">
+        <div class="modal-backdrop" aria-hidden="true"></div>
+        <div class="modal-container modal-md">
+            <div class="modal-header">
+                <h2 id="shortcuts-title" class="modal-title">Keyboard Shortcuts</h2>
+                <button class="modal-close-btn" data-modal-close aria-label="Close dialog">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="shortcuts-grid">
+                    <div class="shortcut-group">
+                        <h3 class="shortcut-group-title">Navigation</h3>
+                        <div class="shortcut-item"><kbd>Ctrl+K</kbd><span>Open command palette</span></div>
+                        <div class="shortcut-item"><kbd>?</kbd><span>Show shortcuts</span></div>
+                        <div class="shortcut-item"><kbd>Esc</kbd><span>Close modals / palettes</span></div>
+                        <div class="shortcut-item"><kbd>T</kbd><span>Toggle theme</span></div>
+                        <div class="shortcut-item"><kbd>G H</kbd><span>Go Home</span></div>
+                    </div>
+                    <div class="shortcut-group">
+                        <h3 class="shortcut-group-title">Tools</h3>
+                        <div class="shortcut-item"><kbd>Ctrl+Shift+J</kbd><span>JSON Formatter</span></div>
+                        <div class="shortcut-item"><kbd>Ctrl+Shift+R</kbd><span>Regex Tester</span></div>
+                        <div class="shortcut-item"><kbd>Ctrl+Shift+A</kbd><span>API Tester</span></div>
+                        <div class="shortcut-item"><kbd>Ctrl+Shift+M</kbd><span>Markdown Preview</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       SETTINGS MODAL
+  ════════════════════════════════════════════════════ -->
+    <div id="settings-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title"
+        style="display:none;">
+        <div class="modal-backdrop" aria-hidden="true"></div>
+        <div class="modal-container modal-lg">
+            <div class="modal-header">
+                <h2 id="settings-title" class="modal-title">Settings</h2>
+                <button class="modal-close-btn" data-modal-close aria-label="Close settings">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-grid">
+                    <!-- Appearance -->
+                    <div class="settings-section">
+                        <h3 class="settings-section-title">Appearance</h3>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-theme">Theme</label>
+                                <p class="settings-description">Choose your preferred color scheme</p>
+                            </div>
+                            <select id="setting-theme" class="settings-select" aria-label="Select theme">
+                                <option value="dark">Dark</option>
+                                <option value="light">Light</option>
+                                <option value="system">System</option>
+                            </select>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-animations">Animations</label>
+                                <p class="settings-description">Enable UI animations and transitions</p>
+                            </div>
+                            <label class="settings-toggle" aria-label="Toggle animations">
+                                <input type="checkbox" id="setting-animations" checked role="switch" />
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Editor -->
+                    <div class="settings-section">
+                        <h3 class="settings-section-title">Editor</h3>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-font-size">Font Size</label>
+                                <p class="settings-description">Code editor font size in pixels</p>
+                            </div>
+                            <select id="setting-font-size" class="settings-select" aria-label="Select font size">
+                                <option value="12">12px</option>
+                                <option value="13">13px</option>
+                                <option value="14" selected>14px</option>
+                                <option value="15">15px</option>
+                                <option value="16">16px</option>
+                                <option value="18">18px</option>
+                            </select>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-tab-size">Tab Size</label>
+                                <p class="settings-description">Number of spaces per indentation level</p>
+                            </div>
+                            <select id="setting-tab-size" class="settings-select" aria-label="Select tab size">
+                                <option value="2" selected>2 spaces</option>
+                                <option value="4">4 spaces</option>
+                                <option value="8">8 spaces</option>
+                            </select>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-word-wrap">Word Wrap</label>
+                                <p class="settings-description">Wrap long lines in the editor</p>
+                            </div>
+                            <label class="settings-toggle" aria-label="Toggle word wrap">
+                                <input type="checkbox" id="setting-word-wrap" checked role="switch" />
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- General -->
+                    <div class="settings-section">
+                        <h3 class="settings-section-title">General</h3>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label" for="setting-auto-copy">Auto-copy on generate</label>
+                                <p class="settings-description">Automatically copy results to clipboard</p>
+                            </div>
+                            <label class="settings-toggle" aria-label="Toggle auto-copy">
+                                <input type="checkbox" id="setting-auto-copy" role="switch" />
+                                <span class="toggle-track"></span>
+                            </label>
+                        </div>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label">Recent Tools History</label>
+                                <p class="settings-description">Number of recent tools to remember</p>
+                            </div>
+                            <select id="setting-history-limit" class="settings-select"
+                                aria-label="Select history limit">
+                                <option value="5">5 tools</option>
+                                <option value="10" selected>10 tools</option>
+                                <option value="20">20 tools</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Danger Zone -->
+                    <div class="settings-section">
+                        <h3 class="settings-section-title">Data</h3>
+                        <div class="settings-item">
+                            <div class="settings-item-info">
+                                <label class="settings-label">Reset All Settings</label>
+                                <p class="settings-description">Clear favorites, history, and preferences</p>
+                            </div>
+                            <button id="reset-settings-btn" class="btn btn-danger btn-sm"
+                                aria-label="Reset all settings to defaults">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       ABOUT MODAL
+  ════════════════════════════════════════════════════ -->
+    <div id="about-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="about-modal-title"
+        style="display:none;">
+        <div class="modal-backdrop" aria-hidden="true"></div>
+        <div class="modal-container about-modal-container">
+            <div class="modal-header">
+                <h2 id="about-modal-title" class="modal-title">About</h2>
+                <button class="modal-close-btn" data-modal-close aria-label="Close about dialog">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body about-modal-body">
+
+                <!-- Profile Header -->
+                <div class="about-profile-card">
+                    <div class="about-avatar-wrap">
+                        <img src="assets/images/profile.jpg" alt="Vimantha Dilshan" class="about-avatar" />
+                        <span class="about-status-dot" title="Open to opportunities" aria-label="Available"></span>
+                    </div>
+                    <div class="about-profile-details">
+                        <h3 class="about-name">Vimantha Dilshan</h3>
+                        <p class="about-job-title">Senior Software Engineer</p>
+                        <div class="about-meta-row">
+                            <span class="about-meta-tag">
+                                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                                Colombo, Sri Lanka
+                            </span>
+                            <span class="about-meta-tag about-meta-available">&#10022; Open to Remote &amp;
+                                Relocation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialisations -->
+                <div class="about-role-strip">
+                    <span class="about-tag about-tag-accent">AWS</span>
+                    <span class="about-tag about-tag-accent">Payment Integrations</span>
+                    <span class="about-tag about-tag-accent">Microservices</span>
+                    <span class="about-tag about-tag-accent">API Architecture</span>
+                </div>
+
+                <!-- Bio -->
+                <p class="about-bio">
+                    Senior Software Engineer with 5+ years of experience delivering full-stack, cloud-native systems
+                    at enterprise scale &mdash; carrier-grade microservices, PCI&nbsp;DSS-compliant payment platforms,
+                    and real-time billing infrastructure. Led end-to-end PayPal Braintree integrations with 3DS2,
+                    Apple Pay, and Google Pay across multi-cloud environments (AWS &middot; GCP &middot; Azure).
+                </p>
+
+                <!-- GitHub Heatmap -->
+                <div class="about-heatmap-section">
+                    <div class="about-heatmap-header">
+                        <h4 class="about-section-label">Contributions</h4>
+                        <span id="about-heatmap-count" class="about-heatmap-count"></span>
+                    </div>
+                    <div class="about-heatmap-scroll">
+                        <div id="about-heatmap-months" class="about-heatmap-months"></div>
+                        <div id="about-heatmap-grid" class="about-heatmap-grid"></div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack -->
+                <div class="about-tech-section">
+                    <h4 class="about-section-label">Tech Stack</h4>
+                    <div class="about-tech-groups">
+                        <div class="about-tech-group">
+                            <span class="about-group-name">Frontend</span>
+                            <div class="about-tags">
+                                <span class="about-tag">React.js</span>
+                                <span class="about-tag">TypeScript</span>
+                                <span class="about-tag">Vue.js</span>
+                                <span class="about-tag">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="about-tech-group">
+                            <span class="about-group-name">Backend</span>
+                            <div class="about-tags">
+                                <span class="about-tag">Laravel</span>
+                                <span class="about-tag">PHP</span>
+                                <span class="about-tag">Python</span>
+                                <span class="about-tag">REST APIs</span>
+                                <span class="about-tag">GraphQL</span>
+                            </div>
+                        </div>
+                        <div class="about-tech-group">
+                            <span class="about-group-name">Cloud &amp; DevOps</span>
+                            <div class="about-tags">
+                                <span class="about-tag">AWS</span>
+                                <span class="about-tag">GCP</span>
+                                <span class="about-tag">Azure</span>
+                                <span class="about-tag">Kubernetes</span>
+                                <span class="about-tag">Docker</span>
+                                <span class="about-tag">Terraform</span>
+                            </div>
+                        </div>
+                        <div class="about-tech-group">
+                            <span class="about-group-name">Security</span>
+                            <div class="about-tags">
+                                <span class="about-tag about-tag-accent">PCI DSS</span>
+                                <span class="about-tag about-tag-accent">ISO 27001</span>
+                                <span class="about-tag about-tag-accent">SOC 2</span>
+                                <span class="about-tag about-tag-accent">GDPR</span>
+                                <span class="about-tag about-tag-accent">Zero Trust</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- External Links -->
+                <div class="about-links-bar">
+                    <a href="https://www.linkedin.com/in/vimantha-dilshan/" target="_blank" rel="noopener noreferrer"
+                        class="about-link about-link-linkedin" aria-label="LinkedIn profile">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Vimantha-Dilshan" target="_blank" rel="noopener noreferrer"
+                        class="about-link about-link-github" aria-label="GitHub profile">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="https://vimantha-dilshan.github.io/vimantha.github.io/" target="_blank"
+                        rel="noopener noreferrer" class="about-link about-link-website" aria-label="Personal website">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <path
+                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                        </svg>
+                        Website
+                    </a>
+                    <a href="mailto:vimantha.0323@gmail.com" class="about-link about-link-email"
+                        aria-label="Send email">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+
+                <!-- Stats -->
+                <div class="about-stats-bar">
+                    <div class="about-stat">
+                        <span class="about-stat-value">4+</span>
+                        <span class="about-stat-label">Years Exp.</span>
+                    </div>
+                    <div class="about-stat-divider" aria-hidden="true"></div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">30+</span>
+                        <span class="about-stat-label">Technologies</span>
+                    </div>
+                    <div class="about-stat-divider" aria-hidden="true"></div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">3</span>
+                        <span class="about-stat-label">Cloud Platforms</span>
+                    </div>
+                    <div class="about-stat-divider" aria-hidden="true"></div>
+                    <div class="about-stat">
+                        <span class="about-stat-value">35+</span>
+                        <span class="about-stat-label">Projects Shipped</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       FAVORITES PANEL
+  ════════════════════════════════════════════════════ -->
+    <div id="favorites-panel" class="side-panel" role="dialog" aria-modal="false" aria-label="Favorites panel"
+        style="display:none;">
+        <div class="side-panel-backdrop" id="favorites-backdrop" aria-hidden="true"></div>
+        <div class="side-panel-content">
+            <div class="side-panel-header">
+                <h2 class="side-panel-title">Favorites</h2>
+                <button class="side-panel-close" id="favorites-close" aria-label="Close favorites panel">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+            <div id="favorites-list" class="side-panel-body">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       TOAST CONTAINER
+  ════════════════════════════════════════════════════ -->
+    <div id="toast-container" class="toast-container" role="region" aria-label="Notifications" aria-live="polite"
+        aria-atomic="false"></div>
+
+    <!-- ═══════════════════════════════════════════════════
+       PWA INSTALL BANNER
+  ════════════════════════════════════════════════════ -->
+    <div id="pwa-install-banner" class="pwa-banner" style="display:none;" role="banner"
+        aria-label="Install Orion as an app">
+        <div class="pwa-banner-content">
+            <svg width="24" height="24" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <defs>
+                    <linearGradient id="pwaGrad" x1="0" y1="0" x2="48" y2="48">
+                        <stop stop-color="#047857" />
+                        <stop offset="1" stop-color="#34d399" />
+                    </linearGradient>
+                </defs>
+                <rect width="48" height="48" rx="12" fill="url(#pwaGrad)" />
+                <line x1="11" y1="11" x2="37" y2="9" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                <line x1="11" y1="11" x2="14" y2="24" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                <line x1="37" y1="9" x2="34" y2="22" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                <line x1="14" y1="24" x2="24" y2="21" stroke="white" stroke-width="0.7" stroke-opacity="0.55" />
+                <line x1="24" y1="21" x2="34" y2="22" stroke="white" stroke-width="0.7" stroke-opacity="0.55" />
+                <line x1="14" y1="24" x2="11" y2="39" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                <line x1="34" y1="22" x2="37" y2="38" stroke="white" stroke-width="0.6" stroke-opacity="0.35" />
+                <line x1="11" y1="39" x2="37" y2="38" stroke="white" stroke-width="0.6" stroke-opacity="0.3" />
+                <circle cx="11" cy="11" r="2.2" fill="white" fill-opacity="0.9" />
+                <circle cx="37" cy="9" r="1.8" fill="white" fill-opacity="0.85" />
+                <circle cx="14" cy="24" r="2.1" fill="white" />
+                <circle cx="24" cy="21" r="2.1" fill="white" />
+                <circle cx="34" cy="22" r="2.1" fill="white" />
+                <circle cx="37" cy="38" r="2.4" fill="white" />
+                <circle cx="11" cy="39" r="1.8" fill="white" fill-opacity="0.85" />
+            </svg>
+            <div class="pwa-banner-text">
+                <strong>Install Orion</strong>
+                <span>Add to your home screen for offline access</span>
+            </div>
+        </div>
+        <div class="pwa-banner-actions">
+            <button id="pwa-install-btn" class="btn btn-primary btn-sm" aria-label="Install app">Install</button>
+            <button id="pwa-dismiss-btn" class="btn btn-ghost btn-sm" aria-label="Dismiss install prompt">Later</button>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+       SERVICE WORKER
+  ════════════════════════════════════════════════════ -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('service-worker.js')
+                    .then(function (registration) {
+                        console.log('[SW] Service Worker registered:', registration.scope);
+                    })
+                    .catch(function (error) {
+                        console.warn('[SW] Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════
+       APPLICATION ENTRY POINT
+  ════════════════════════════════════════════════════ -->
+    <script type="module" src="assets/js/core/app.js"></script>
+
+</body>
+
+</html>
